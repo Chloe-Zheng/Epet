@@ -3,7 +3,7 @@
  <div class="classifyWrap">
 
      <ul class="classifyTitle">
-       <li class="active"><router-link to="/catFooterFenlei/catSortsList" >分类</router-link></li>
+       <li><router-link to="/catFooterFenlei/catSortsList" >分类</router-link></li>
        <li><router-link to="/catFooterFenlei/catPinpaiList">品牌</router-link></li>
      </ul>
 

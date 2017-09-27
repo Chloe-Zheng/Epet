@@ -21,6 +21,36 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 var proxyTable = config.dev.proxyTable
 
 var app = express()
+//开始注册路由
+
+
+//引入数据
+var userMsg = require('../src/mock/userMsg.json')
+
+//得到路由器
+var apiRouter = express.Router()
+//注册路由
+
+apiRouter.get('/userMsg', function (req, res) {
+  res.redirect("/catShouye");
+ /* var username=req.query.username
+  var password=req.query.password
+  var user={"username":"xiaomao","password":"123"}
+  userMsg.push(user)*/
+  userMsg.push(req.query)
+  res.send({code:0,userMsg:userMsg})
+
+
+
+
+})
+
+//启用路由器
+app.use('/api', apiRouter)
+
+
+
+//结束注册路由
 var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {

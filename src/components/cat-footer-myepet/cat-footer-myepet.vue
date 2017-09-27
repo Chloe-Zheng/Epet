@@ -1,10 +1,11 @@
 <template>
     <div class="myPet">
-      <div class="myPetContent">
+      <registerForm v-show="this.registerShow" ></registerForm>
+      <div class="myPetContent" v-show="!this.registerShow">
         <div class="myPetTitle">
           <div class="myPetTitleHeader">
             <router-link to="/catShouye"><span class="left"></span></router-link>
-            <span class="regist">注册</span>
+            <span class="regist" @click="showRegisterForm(true)">注册</span>
           </div>
           <div class="myPetTitleCenter">
             <span class="myPetPic"></span>
@@ -33,20 +34,30 @@
 
 </template>
 <script>
+  import registerForm from '../registerForm/registerForm.vue'
   import normalLogin from '../normalLogin/normalLogin.vue'
     export default {
       data(){
           return {
-            state:1
+            state:1,
+            registerShow:false
+
           }
 
       },
       methods:{
         isShow(state){
            this.state=state
-        }
-      },
-        components: {normalLogin}
+        },
+        showRegisterForm(value){
+            this.registerShow=value
+        },
+        computed:{
+
+        },
+
+        },
+        components: {normalLogin,registerForm}
 
     }
 
@@ -170,7 +181,6 @@
             background url("../../../static/img/QQ.png") center no-repeat
             background-size 60px 60px
             border-radius 50% 50%
-
 
 
 

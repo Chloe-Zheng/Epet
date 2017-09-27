@@ -1,30 +1,8 @@
 <template>
 
       <div class="header">
-        <div class="overflow xiazaiApp " v-show="isShow">
-          <div class="overflow rela">
-          <span class="clsoebtn" @click="this.toggleDownload">
-            <img src="../../../img/closebtn_03.png" alt="epetdownload">
-          </span>
-            <div class="appdowimg">
-              <a href="###" >
-                <img src="../../../img/xiazaiAPP.png">
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="search-wrapper">
-          <div class="search">
-            <a class="pet-state" href="###">
-              <span class="cat">猫猫站</span>
-              <span class="line">|</span>
-              <span class="address">重庆</span>
-              <img src="../../../img/youjianjian.png"/>
-            </a>
-            <a class="search-input"><input type="search" placeholder="搜索商品和品牌" disabled="disabled"/></a>
-            <a class="qipao" href="###"><img  src="../../../img/qipao.png" alt=""></a>
-          </div>
-        </div>
+
+
 
       </div>
 
@@ -41,9 +19,7 @@
           }
       },
       methods:{
-        toggleDownload(){
-          this.isShow=!this.isShow
-        }
+
       }
     }
 
@@ -55,39 +31,6 @@
     background-color white
     z-index 100
     top 0
-  //广告下载部分
-    .xiazaiApp
-      width 100%
-      height 55px
-      overflow hidden
-      .rela
-        width 100%
-        height 100%
-        position relative
-        .clsoebtn
-          display inline-block
-          position absolute
-          top 10px
-          left 10px
-          width 19px
-          height 19px
-          z-index 10
-          &>img
-            width 100%
-        .appdowimg
-          position absolute
-          z-index 2
-          top 0
-          left 0
-          width 100%
-          &>a
-            width 100%
-            display block
-            &>img
-              width 100%
-
-
-
 
   //搜索框
     .search-wrapper

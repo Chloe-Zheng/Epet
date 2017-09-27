@@ -38,7 +38,7 @@
         },
       data(){
         return {
-          sort:[]
+          sort:{}
 
         }
       },

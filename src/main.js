@@ -7,7 +7,11 @@ import router from './router/index'
 
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import './mock/mockSever'
 import VueScroller from 'vue-scroller'
+import VueResource from 'vue-resource'
+
+Vue.use(VueResource)
 Vue.use(VueScroller)
 Vue.use(MintUI);
 

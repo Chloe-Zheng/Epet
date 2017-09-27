@@ -1,0 +1,16 @@
+/* https://mall.api.epet.com/v3/index/main.html?do=getSkinTheme&version=320&system=wap&isWeb=1&_=1506321214385 */
+{
+    "msg": "",
+    "code": "succeed",
+    "login_status": 0,
+    "mall_uid": "epet_0",
+    "mall_user": "",
+    "sys_time": 1506321175,
+    "hash": "",
+    "epet_site": "epet",
+    "theme": {
+        "theme_name": "",
+        "theme_url": ""
+    },
+    "activity_alert": []
+}

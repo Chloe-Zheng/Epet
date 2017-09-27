@@ -1,14 +1,14 @@
 <template>
-    <div>
+    <div >
       <div class="normalLoginWrap" v-show="state==1">
         <ul class="normalLoginTab">
           <li class="useIcon">
-            <input type="text" placeholder="手机号/邮箱/用户名">
+            <input type="text" placeholder="手机号/邮箱/用户名" v-model="username">
           </li >
-          <li class="pswIcon"><input type="text" placeholder="输入密码"></li>
+          <li class="pswIcon"><input type="text" placeholder="输入密码" v-model="password"></li>
         </ul>
         <div class="forgetPsw"><a href="https://wap.epet.com/login.html?do=findpassword">忘记密码?</a></div>
-        <div class="login"><a href="javascript:void(0)">登录</a></div>
+        <div class="login" @click="this.userLogin"><a href="javascript:void(0)">登录</a></div>
         <div class="discount">
           <span>APP专享:E宠团5折包邮,首单满99送99</span>
           <a href="https://wap.epet.com/download.html?appname=epetmall">去下载</a>
@@ -37,16 +37,46 @@
       </div>
       </div>
 
-
-
-
-
 </template>
 <script>
+import {MessageBox} from 'mint-ui'
+
+import axios from 'axios'
     export default {
+      data(){
+          return {
+            username:'',
+            password:''
+          }
+      },
         props:{
             state:Number
         },
+      methods: {
+
+        userLogin(){
+          axios.get('/api/userMsg')
+            .then((response) => {
+              const {username, password} = this
+              const userMsgs = response.data.userMsg
+              const userMsg = userMsgs.find((item) => (item.username == username))
+              if(!userMsg){
+                MessageBox('用户名不存在','请输入有效的用户名')
+
+              }else{
+                if(!userMsg.password==password){
+                   MessageBox('密码错误','请输入有效的密码')
+
+               }else{
+                   MessageBox('登陆成功!')
+
+                 }
+              }
+
+
+            })
+        }
+      },
         components: {}
 
     }
